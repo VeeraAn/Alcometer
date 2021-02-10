@@ -48,9 +48,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      
       <View style={styles.header}>
         <Text style={styles.headerText}>ALCOMETER</Text>
       </View>
+      
       <View style={styles.field}>
         <Text>Weight</Text>
         <TextInput
@@ -59,6 +61,7 @@ export default function App() {
           placeholder="in kilograms"
           keyboardType='numeric'></TextInput>
       </View>
+      
       <View style={styles.field}>
         <Text>Bottles</Text>
         <Picker
@@ -72,6 +75,7 @@ export default function App() {
           }
         </Picker>
       </View>
+      
       <View style={styles.field}>
         <Text>Time</Text>
         <Picker
@@ -84,6 +88,7 @@ export default function App() {
           ))
           }</Picker>
       </View>
+      
       <View style={styles.field}>
         <Text> Gender</Text>
         <RadioForm
@@ -96,11 +101,15 @@ export default function App() {
           onPress={(value) => {setGender(value)}}
           />  
       </View>
+      
       <View style={styles.field}>
         <Text>Promilles</Text>
         <Text>{result.toFixed(2)}</Text>
       </View>
-      <Button color='#c74141' onPress= {calculate} title="Calculate"/>
+        <Button color='#c74141' onPress= {calculate} title="Calculate"/>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>Author: Veera Annala</Text>
+      </View>
     </View>
   );
 }
@@ -122,6 +131,15 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
   },
+  footer: {
+    marginTop: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+  },
+  footerText: {
+    textAlign: 'center',
+    color: '#000',
+  },
   field: {
     margin: 10,
   },
@@ -131,6 +149,6 @@ const styles = StyleSheet.create({
   radio: {
     marginTop: 10,
     marginBottom: 10,
-    
   },
+
 });
