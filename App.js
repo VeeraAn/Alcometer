@@ -28,7 +28,6 @@ export default function App() {
   }
 
   function calculate() {
-    let aika = time;
     let grams = (bottle * 0.33) * 8 * 4.5;
     let burning = weight / 10;
     let gramsLeft = grams - (burning * time);
